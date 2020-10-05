@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "fallfest",
+  "version": "${version}",
+  "name": "Unnamed Fallfest Mod",
+  "description": "",
+  "authors": [ ],
+  "contact": { },
+  "license": "MIT",
+  "icon": "assets/fallfest/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.alexnader.fallfest.Fallfest"
+    ],
+    "client": [
+      "dev.alexnader.fallfest.client.FallfestClient"
+    ],
+    "cardinal-components-block": [
+      "dev.alexnader.fallfest.component.FallfestComponents"
+    ],
+    "cca_block_storage": [
+      "dev.alexnader.fallfest.component.FallfestComponents"
+    ],
+    "modmenu": [
+      "dev.alexnader.fallfest.client.integration.FallfestModMenu"
+    ]
+  },
+  "mixins": [
+    "fallfest.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.10.0+build.208",
+    "fabric": "*",
+    "minecraft": "1.16.3"
+  },
+  "custom": {
+    "cardinal-components": [
+      "fallfest:block_component_storage",
+      "fallfest:color_pos"
+    ]
+  }
+}

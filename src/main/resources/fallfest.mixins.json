@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.alexnader.fallfest.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [ "world.ChunkRendererRegionMixin", "FoliagePlacerMixin", "world.WorldMixin" ],
+  "client": [
+    "BlockColorsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
