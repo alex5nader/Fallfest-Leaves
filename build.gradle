@@ -33,15 +33,6 @@ dependencies {
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
 
-    modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-base:${project.cca_version}"
-    modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-block:${project.cca_version}"
-    modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-world:${project.cca_version}"
-//    include "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-base:${project.cca_version}"
-//    include "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-block:${project.cca_version}"
-//    include "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-world:${project.cca_version}"
-
-    modImplementation "dev.alexnader:cca_block_storage:0"
-
     modApi("me.shedaniel.cloth:config-2:${project.clothconfig_version}") {
         exclude(group: "net.fabricmc.fabric-api")
     }

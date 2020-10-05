@@ -1,8 +1,5 @@
 package dev.alexnader.fallfest.client;
 
-import dev.alexnader.cca_block_storage.api.BlockStoredComponents;
-import dev.alexnader.fallfest.component.BlockPosComponent;
-import dev.alexnader.fallfest.component.FallfestComponents;
 import dev.alexnader.fallfest.mixinterface.ToWorld;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.color.block.BlockColorProvider;
@@ -54,7 +51,7 @@ public class FallColorsProvider implements BlockColorProvider {
     @Override
     public int getColor(BlockState state, @Nullable BlockRenderView world, @Nullable BlockPos pos, int tintIndex) {
         if (pos == null || world == null) {
-            System.out.println("FCP: shit no pos or no world");
+//            System.out.println("FCP: shit no pos or no world");
             return -1;
         } else {
             BlockPos colorPos = null;
