@@ -1,6 +1,6 @@
-package dev.alexnader.fallfest.client;
+package dev.alexnader.fallfest_leaves.client;
 
-import dev.alexnader.fallfest.Fallfest;
+import dev.alexnader.fallfest_leaves.FallfestLeaves;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.util.math.BlockPos;
@@ -21,8 +21,8 @@ public class FallColorsProvider implements BlockColorProvider {
 
     @Override
     public int getColor(BlockState state, @Nullable BlockRenderView world, @Nullable BlockPos pos, int tintIndex) {
-        if (state.contains(Fallfest.FALL_COLOR)) {
-            return colors[state.get(Fallfest.FALL_COLOR)];
+        if (state.contains(FallfestLeaves.FALL_COLOR)) {
+            return colors[state.get(FallfestLeaves.FALL_COLOR)];
         } else {
             return -1;
         }

@@ -1,6 +1,6 @@
-package dev.alexnader.fallfest.mixin;
+package dev.alexnader.fallfest_leaves.mixin;
 
-import dev.alexnader.fallfest.Fallfest;
+import dev.alexnader.fallfest_leaves.FallfestLeaves;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
@@ -44,10 +44,10 @@ public class FoliagePlacerMixin {
     void setLeaves(ModifiableTestableWorld world, Random random, TreeFeatureConfig config, BlockPos treePos, int baseHeight, Set<BlockPos> leaves, int offset, boolean giantTrunk, BlockBox box, CallbackInfo ci, int i, BlockPos.Mutable leafPos) {
         BlockState leavesState = config.leavesProvider.getBlockState(random, leafPos);
 
-        Integer fallColor = Fallfest.currentTreeFallColor.get();
+        Integer fallColor = FallfestLeaves.currentTreeFallColor.get();
 
         if (fallColor != null) {
-            world.setBlockState(leafPos, leavesState.with(Fallfest.FALL_COLOR, fallColor), 19);
+            world.setBlockState(leafPos, leavesState.with(FallfestLeaves.FALL_COLOR, fallColor), 19);
         } else {
             world.setBlockState(leafPos, leavesState, 19);
         }

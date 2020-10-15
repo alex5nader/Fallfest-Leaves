@@ -1,7 +1,7 @@
-package dev.alexnader.fallfest.mixin;
+package dev.alexnader.fallfest_leaves.mixin;
 
-import dev.alexnader.fallfest.Fallfest;
-import dev.alexnader.fallfest.FallfestConfig;
+import dev.alexnader.fallfest_leaves.FallfestLeaves;
+import dev.alexnader.fallfest_leaves.FallfestLeavesConfig;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -21,11 +21,11 @@ import java.util.Set;
 public class TreeFeatureMixin {
     @Inject(method = "generate(Lnet/minecraft/world/ModifiableTestableWorld;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Ljava/util/Set;Ljava/util/Set;Lnet/minecraft/util/math/BlockBox;Lnet/minecraft/world/gen/feature/TreeFeatureConfig;)Z", at = @At("HEAD"))
     void cacheColorAndPos(ModifiableTestableWorld world, Random random, BlockPos pos, Set<BlockPos> logPositions, Set<BlockPos> leavesPositions, BlockBox box, TreeFeatureConfig config, CallbackInfoReturnable<Boolean> cir) {
-        boolean shouldColor = FallfestConfig.getOrLoad().coloredLeaves().contains(Registry.BLOCK.getId(config.leavesProvider.getBlockState(new Random(), new BlockPos(0, 0, 0)).getBlock()));
+        boolean shouldColor = FallfestLeavesConfig.getOrLoad().coloredLeaves().contains(Registry.BLOCK.getId(config.leavesProvider.getBlockState(new Random(), new BlockPos(0, 0, 0)).getBlock()));
         if (shouldColor) {
-            Fallfest.currentTreeFallColor.set((int) (MathHelper.hashCode(pos) & 7));
+            FallfestLeaves.currentTreeFallColor.set((int) (MathHelper.hashCode(pos) & 7));
         } else {
-            Fallfest.currentTreeFallColor.set(null);
+            FallfestLeaves.currentTreeFallColor.set(null);
         }
     }
 }

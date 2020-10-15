@@ -1,7 +1,7 @@
-package dev.alexnader.fallfest.mixin;
+package dev.alexnader.fallfest_leaves.mixin;
 
-import dev.alexnader.fallfest.Fallfest;
-import dev.alexnader.fallfest.FallfestConfig;
+import dev.alexnader.fallfest_leaves.FallfestLeaves;
+import dev.alexnader.fallfest_leaves.FallfestLeavesConfig;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.JanksonConfigSerializer;
 import net.minecraft.block.Block;
@@ -23,17 +23,17 @@ public abstract class BlocksMixin {
 
     @Inject(method = "<clinit>", at = @At("HEAD"))
     private static void registerConfig(CallbackInfo ci) {
-        AutoConfig.register(FallfestConfig.class, JanksonConfigSerializer::new);
+        AutoConfig.register(FallfestLeavesConfig.class, JanksonConfigSerializer::new);
     }
 
     @Inject(method = "register", at = @At("HEAD"))
     private static void trackPath(String id, Block block, CallbackInfoReturnable<Block> cir) {
-        Fallfest.latestBlockPath.set(id);
+        FallfestLeaves.latestBlockPath.set(id);
     }
 
     @ModifyArg(method = "register", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/registry/Registry;register(Lnet/minecraft/util/registry/Registry;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;"))
     private static Object replace(Object original) {
-        if (Fallfest.currentBlockShouldHaveColorPropery()) {
+        if (FallfestLeaves.currentBlockShouldHaveColorPropery()) {
             return createLeavesBlock();
         } else {
             return original;

@@ -1,7 +1,7 @@
-package dev.alexnader.fallfest.mixin;
+package dev.alexnader.fallfest_leaves.mixin;
 
-import dev.alexnader.fallfest.client.FallColorsProvider;
-import dev.alexnader.fallfest.FallfestConfig;
+import dev.alexnader.fallfest_leaves.client.FallColorsProvider;
+import dev.alexnader.fallfest_leaves.FallfestLeavesConfig;
 import net.minecraft.block.Block;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.util.Identifier;
@@ -30,14 +30,14 @@ public class BlockColorsMixin {
     )
     private static Block[] hijackBlocks(Block[] blocks) {
         List<Block> noRecolors = new ArrayList<>(Arrays.asList(blocks));
-        Set<Identifier> recolorIds = FallfestConfig.getOrLoad().coloredLeaves();
+        Set<Identifier> recolorIds = FallfestLeavesConfig.getOrLoad().coloredLeaves();
         noRecolors.removeIf(b -> recolorIds.contains(Registry.BLOCK.getId(b)));
         return noRecolors.toArray(new Block[0]);
     }
 
     @Inject(method = "create", at = @At("RETURN"))
     private static void addFallColors(CallbackInfoReturnable<BlockColors> cir) {
-        Block[] recolors = FallfestConfig.getOrLoad().coloredLeaves().stream().map(Registry.BLOCK::get).toArray(Block[]::new);
+        Block[] recolors = FallfestLeavesConfig.getOrLoad().coloredLeaves().stream().map(Registry.BLOCK::get).toArray(Block[]::new);
         cir.getReturnValue().registerColorProvider(new FallColorsProvider(), recolors);
     }
 }

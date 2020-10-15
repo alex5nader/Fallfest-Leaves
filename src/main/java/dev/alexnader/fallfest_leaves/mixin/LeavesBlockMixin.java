@@ -1,6 +1,6 @@
-package dev.alexnader.fallfest.mixin;
+package dev.alexnader.fallfest_leaves.mixin;
 
-import dev.alexnader.fallfest.Fallfest;
+import dev.alexnader.fallfest_leaves.FallfestLeaves;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -20,15 +20,15 @@ public class LeavesBlockMixin extends Block {
 
     @Inject(method = "<init>", at = @At("TAIL"))
     void maybeSetDefaultFallColor(AbstractBlock.Settings settings, CallbackInfo ci) {
-        if (Fallfest.currentBlockShouldHaveColorPropery()) {
-            this.setDefaultState(this.getDefaultState().with(Fallfest.FALL_COLOR, 0));
+        if (FallfestLeaves.currentBlockShouldHaveColorPropery()) {
+            this.setDefaultState(this.getDefaultState().with(FallfestLeaves.FALL_COLOR, 0));
         }
     }
 
     @Inject(method = "appendProperties", at = @At("TAIL"))
     void maybeAddFallColorProperty(StateManager.Builder<Block, BlockState> builder, CallbackInfo ci) {
-        if (Fallfest.currentBlockShouldHaveColorPropery()) {
-            builder.add(Fallfest.FALL_COLOR);
+        if (FallfestLeaves.currentBlockShouldHaveColorPropery()) {
+            builder.add(FallfestLeaves.FALL_COLOR);
         }
     }
 }

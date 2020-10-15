@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "dev.alexnader.fallfest.mixin",
+  "package": "dev.alexnader.fallfest_leaves.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "BlocksMixin", "FoliagePlacerMixin", "LeavesBlockMixin", "TreeFeatureMixin"

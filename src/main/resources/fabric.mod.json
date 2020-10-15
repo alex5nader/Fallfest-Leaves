@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "fallfest",
+  "id": "fallfest_leaves",
   "version": "${version}",
-  "name": "Unnamed Fallfest Mod",
+  "name": "Fallfest Leaves",
   "description": "",
   "authors": [ ],
   "contact": { },
@@ -10,7 +10,7 @@
   "icon": "assets/fallfest/icon.png",
   "environment": "*",
   "mixins": [
-    "fallfest.mixins.json"
+    "fallfest_leaves.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.10.0+build.208",

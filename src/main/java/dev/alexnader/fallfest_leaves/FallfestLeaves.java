@@ -1,23 +1,23 @@
-package dev.alexnader.fallfest;
+package dev.alexnader.fallfest_leaves;
 
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.Identifier;
 
-public class Fallfest {
+public class FallfestLeaves {
     public static final ThreadLocal<String> latestBlockPath = new ThreadLocal<>();
 
     public static boolean currentBlockShouldHaveColorPropery() {
-        String path = Fallfest.latestBlockPath.get();
+        String path = FallfestLeaves.latestBlockPath.get();
         if (path == null) {
             return false;
         }
-        FallfestConfig config = FallfestConfig.getOrLoad();
+        FallfestLeavesConfig config = FallfestLeavesConfig.getOrLoad();
         return config.colorLeaves() && config.coloredLeaves().contains(new Identifier(path));
     }
 
     public static final ThreadLocal<Integer> currentTreeFallColor = new ThreadLocal<>();
 
-    public static final String NAMESPACE = "fallfest";
+    public static final String NAMESPACE = "fallfest_leaves";
 
     public static Identifier id(String path) {
         return new Identifier(NAMESPACE, path);

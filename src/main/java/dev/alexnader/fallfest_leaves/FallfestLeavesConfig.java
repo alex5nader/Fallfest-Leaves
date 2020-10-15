@@ -1,4 +1,4 @@
-package dev.alexnader.fallfest;
+package dev.alexnader.fallfest_leaves;
 
 import com.google.common.collect.Sets;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
@@ -10,12 +10,12 @@ import net.minecraft.util.Identifier;
 import java.util.Set;
 
 
-@Config(name = "fallfest")
-public class FallfestConfig implements ConfigData {
+@Config(name = "fallfest_leaves")
+public class FallfestLeavesConfig implements ConfigData {
     @ConfigEntry.Gui.Excluded
-    private static FallfestConfig instance = null;
+    private static FallfestLeavesConfig instance = null;
 
-    public static FallfestConfig getOrLoad() {
+    public static FallfestLeavesConfig getOrLoad() {
         if (instance == null) {
             return reloadAndGet();
         } else {
@@ -23,8 +23,8 @@ public class FallfestConfig implements ConfigData {
         }
     }
 
-    public static FallfestConfig reloadAndGet() {
-        instance = AutoConfig.getConfigHolder(FallfestConfig.class).getConfig();
+    public static FallfestLeavesConfig reloadAndGet() {
+        instance = AutoConfig.getConfigHolder(FallfestLeavesConfig.class).getConfig();
         return instance;
     }
 
@@ -32,7 +32,7 @@ public class FallfestConfig implements ConfigData {
     private boolean colorLeaves = true;
     @SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal"})
     private Set<Identifier> coloredLeaves = Sets.newHashSet(
-        Fallfest.id("test_leaves"),
+        FallfestLeaves.id("test_leaves"),
         new Identifier("minecraft:oak_leaves"),
         new Identifier("minecraft:birch_leaves"),
         new Identifier("minecraft:dark_oak_leaves")
