@@ -17,11 +17,5 @@ public class FallfestLeaves {
 
     public static final ThreadLocal<Integer> currentTreeFallColor = new ThreadLocal<>();
 
-    public static final String NAMESPACE = "fallfest_leaves";
-
-    public static Identifier id(String path) {
-        return new Identifier(NAMESPACE, path);
-    }
-
     public static final IntProperty FALL_COLOR = IntProperty.of("fall_color", 0, 7);
 }

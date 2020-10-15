@@ -32,7 +32,6 @@ public class FallfestLeavesConfig implements ConfigData {
     private boolean colorLeaves = true;
     @SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal"})
     private Set<Identifier> coloredLeaves = Sets.newHashSet(
-        FallfestLeaves.id("test_leaves"),
         new Identifier("minecraft:oak_leaves"),
         new Identifier("minecraft:birch_leaves"),
         new Identifier("minecraft:dark_oak_leaves")
