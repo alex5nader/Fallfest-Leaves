@@ -36,7 +36,7 @@ public class BlockColorsMixin {
     }
 
     @Inject(method = "create", at = @At("RETURN"))
-    private static void addOak(CallbackInfoReturnable<BlockColors> cir) {
+    private static void addFallColors(CallbackInfoReturnable<BlockColors> cir) {
         Block[] recolors = FallfestConfig.getOrLoad().coloredLeaves().stream().map(Registry.BLOCK::get).toArray(Block[]::new);
         cir.getReturnValue().registerColorProvider(new FallColorsProvider(), recolors);
     }

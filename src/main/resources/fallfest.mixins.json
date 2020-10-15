@@ -3,7 +3,9 @@
   "minVersion": "0.8",
   "package": "dev.alexnader.fallfest.mixin",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [ "world.ChunkRendererRegionMixin", "FoliagePlacerMixin", "world.WorldMixin" ],
+  "mixins": [
+    "BlocksMixin", "FoliagePlacerMixin", "LeavesBlockMixin", "TreeFeatureMixin"
+  ],
   "client": [
     "BlockColorsMixin"
   ],

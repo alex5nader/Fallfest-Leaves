@@ -5,14 +5,11 @@ import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.util.Identifier;
 
 import java.util.Set;
 
 
-@SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal"})
 @Config(name = "fallfest")
 public class FallfestConfig implements ConfigData {
     @ConfigEntry.Gui.Excluded
@@ -31,12 +28,20 @@ public class FallfestConfig implements ConfigData {
         return instance;
     }
 
+    @SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal"})
     private boolean colorLeaves = true;
-    private Set<Identifier> coloredLeaves = Sets.newHashSet(new Identifier("minecraft:oak_leaves"), Fallfest.id("test_leaves"));
+    @SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal"})
+    private Set<Identifier> coloredLeaves = Sets.newHashSet(
+        Fallfest.id("test_leaves"),
+        new Identifier("minecraft:oak_leaves"),
+        new Identifier("minecraft:birch_leaves"),
+        new Identifier("minecraft:dark_oak_leaves")
+    );
 
     public boolean colorLeaves() {
         return colorLeaves;
     }
+
     public Set<Identifier> coloredLeaves() {
         return coloredLeaves;
     }
